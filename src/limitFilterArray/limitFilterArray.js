@@ -18,7 +18,7 @@ const quickSort = (arr) => {
 
     for(let i=0; i<arrLength; i++) {
         const item = arr[i];
-        item <= middle && i!==middleIndex && left.push(item); // 考虑参考值紧邻有相同值的情况
+        item <= middle && i!==middleIndex && left.push(item); // 数据组中值与参考值相同时，统一放左侧
         item > middle && right.push(item);
     }
 
