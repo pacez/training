@@ -61,9 +61,10 @@ const limitFilterArray = (max,arr) => {
     // 返回结果
     let result = new Array(arrLength);
 
-    // 构建无序数组 
+    // 重新排序为递增有序数组 
     let orderArray = quickSort(arr);
     
+    // 根据arrToMap记录的索引,构建最终结果
     for(let i=0;  i<max; i++) {
         const item = orderArray[i];
         const itemIndex = arrToMap[item][0]; 
