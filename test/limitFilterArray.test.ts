@@ -1,4 +1,4 @@
-const limitFilterArray = require('../lib/limitFilterArray/index').default;
+import limitFilterArray from '../src/limitFilterArray';
 
 // 普通情况
 const case_1 = limitFilterArray(6,[

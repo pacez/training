@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 /**
  * 快速排序
  *
@@ -23,4 +23,4 @@ function quickSort(arr) {
     right = quickSort(right);
     return left.concat([middle]).concat(right);
 }
-exports.default = quickSort;
+exports["default"] = quickSort;
