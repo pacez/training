@@ -13,6 +13,6 @@ test('紧邻的两个值，就是目标值', () => {
 });
 
 const case_3 = twoSum([2,7,11,15],19);
-test('未命令目标', () => {
+test('未命中目标', () => {
     expect(sort(case_3)).toStrictEqual([]);
 });
