@@ -6,8 +6,8 @@
 npm i or yarn 
 ```
 
-### 运行测试用例
-算法练习以基于jest的测试用例为结果验证
+### 算法验证
+以基于jest的测试用例运行结果，验证算法是否正确运行。
 ```
 npm run test or yarn test
 ```
