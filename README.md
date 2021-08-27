@@ -1,12 +1,6 @@
 # training
 一些前端基础算法练习记录
 
-### 前置依赖
-依赖于tsc编译typescript, 请全局安装typescript
-```
-npm i -g typescript
-```
-
 ### 项目依赖安装
 ```
 npm i or yarn 
