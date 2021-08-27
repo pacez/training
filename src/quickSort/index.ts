@@ -1,4 +1,6 @@
 /**
+ * author: pace_zhong@foxmail.com
+ * 
  * 快速排序
  *
  * @param {Array<number>} arr

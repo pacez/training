@@ -1,5 +1,7 @@
 
 /**
+ * author: pace_zhong@foxmail.com
+ * 
  * 整数反转
  * 不使用转字符，数组反转等内置方法
  * @export
