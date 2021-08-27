@@ -1,10 +1,10 @@
 /**
  * 快速排序
  *
- * @param {*} arr
- * @return {*} 
+ * @param {Array<number>} arr
+ * @return {*}  {Array<number>}
  */
- export default  function quickSort (arr:Array<number>) {
+export default  function quickSort (arr:Array<number>):Array<number> {
 
     const arrLength = arr.length;
 

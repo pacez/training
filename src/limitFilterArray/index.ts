@@ -1,20 +1,19 @@
 import quickSort from "../quickSort";
 
+interface IArrToMap {
+    [key:string]: Array<number>
+}
+
 /**
  * 实现一个数组过滤方法。
  * 输入参数为一个数组arr，和一个数字max，arr中全是数字，max小于arr的长度，要求返回arr中最小的max个数字，且保持原数组顺序。
  * 比如：输入：[1,2,3,5,6,3,2]，3 返回：[1,2,2] 
  *
- * @param {*} max
- * @param {*} arr
- * @return {*} 
+ * @param {number} max
+ * @param {Array<number>} arr
+ * @return {*}  {Array<number>}
  */
-
-interface IArrToMap {
-    [key:string]: Array<number>
-}
-
-export default function limitFilterArray (max:number,arr:Array<number>) {
+export default function limitFilterArray (max:number,arr:Array<number>):Array<number> {
     const arrLength = arr.length;
 
     if(max > arrLength) {
