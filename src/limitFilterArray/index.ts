@@ -18,8 +18,7 @@ export default function limitFilterArray (max:number,arr:Array<number>) {
     const arrLength = arr.length;
 
     if(max > arrLength) {
-        alert('max 不能大于数组长度')
-        return 
+        max = arrLength;
     }
 
     // 长度相等直接返回

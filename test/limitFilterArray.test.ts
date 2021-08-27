@@ -15,3 +15,20 @@ const case_2 = limitFilterArray(6,[
 test('minus zone', () => {
     expect(case_2).toStrictEqual([ -1, 2, 3, 3, 3, -6 ]);
 });
+
+// 最大长度
+const case_3 = limitFilterArray(6,[
+    4,-1,2,3,4,7
+]);;
+test('max length', () => {
+    expect(case_3).toStrictEqual([ 4,-1,2,3,4,7 ]);
+});
+
+
+// 超出数组长度
+const case_4 = limitFilterArray(7,[
+    4,-1,2,3,4,7
+]);;
+test('max length', () => {
+    expect(case_4).toStrictEqual([ 4,-1,2,3,4,7 ]);
+});
