@@ -11,3 +11,6 @@ npm i or yarn
 ```
 npm run test or yarn test
 ```
+
+### 运行结果示意
+![run_result](./asset/run_result.png)

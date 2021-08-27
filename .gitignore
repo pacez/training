@@ -28,3 +28,4 @@ node_modules
 testReport
 coverage
 yarn.lock
+.DS_store
