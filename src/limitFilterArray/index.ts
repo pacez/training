@@ -1,32 +1,4 @@
-/**
- * 快速排序
- *
- * @param {*} arr
- * @return {*} 
- */
-const quickSort = (arr) => {
-
-    const arrLength = arr.length;
-
-    if(arr.length <=1) return arr;
-
-    const middleIndex = Math.floor(arr.length/2);
-    const middle = arr[middleIndex];
-
-    let left = [];
-    let right = [];
-
-    for(let i=0; i<arrLength; i++) {
-        const item = arr[i];
-        item <= middle && i!==middleIndex && left.push(item); // 数据组中值与参考值相同时，统一放左侧
-        item > middle && right.push(item);
-    }
-
-    left = quickSort(left)
-    right = quickSort(right)
-
-    return left.concat([middle]).concat(right);
-}
+import quickSort from "../quickSort";
 
 /**
  * 实现一个数组过滤方法。
@@ -37,7 +9,12 @@ const quickSort = (arr) => {
  * @param {*} arr
  * @return {*} 
  */
-const limitFilterArray = (max,arr) => {
+
+interface IArrToMap {
+    [key:string]: Array<number>
+}
+
+export default function limitFilterArray (max:number,arr:Array<number>) {
     const arrLength = arr.length;
 
     if(max > arrLength) {
@@ -46,11 +23,11 @@ const limitFilterArray = (max,arr) => {
     }
 
     // 长度相等直接返回
-    if(max === arr) {
+    if(max === arrLength) {
         return arr
     }
 
-    const arrToMap = {};
+    const arrToMap:IArrToMap = {};
     
     // 将值的索引以对象结构记录下来  
     arr.forEach((item,i) => {
@@ -72,11 +49,7 @@ const limitFilterArray = (max,arr) => {
         // 删除已开销的索引
         arrToMap[item].splice(0,1);
     }
+    
     return result.filter(item => item)
 }
 
-
-const result = limitFilterArray(6,[
-    4,1,2,3,4,7,5,3,4,3,5,6,6
-])
-console.log(result);
