@@ -20,8 +20,6 @@
 
 
 ```typescript
-import doubleDimensionalArrayGenerator from 'double-dimensional-array-generator';
-
 const doubleDimensionalArray  =  doubleDimensionalArrayGenerator({
   columns: 5,
   rows: 6,
