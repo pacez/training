@@ -24,7 +24,7 @@ export default function allSettled(promises: Array<Promise<unknown>>): Promise<A
       return
     }
 
-    const result:Array<IPromiseResult> = new Array(count - 1); // 返回的结果
+    const result:Array<IPromiseResult> = new Array(count); // 返回的结果
 
     // 设置返回值，并判断全部请求结束后，执行resolve 
     const setResult = (data: IPromiseResult, index:number) => {
