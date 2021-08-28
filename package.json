@@ -1,7 +1,7 @@
 {
   "name": "training",
   "version": "1.0.0",
-  "description": "一些前端算法练习",
+  "description": "一些前端基础算法 与 语法糖实现 练习",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
