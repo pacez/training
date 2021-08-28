@@ -1,15 +1,26 @@
 /**
-import isPalindrome from './index';
- * 判断是否回文数
+ * author: pace_zhong@foxmail.com
  * 
- * @param x 
+ * 判断是否回文数
+ * 核心思路保持一致：回文数 反转后 与 反转前相等
+ *  
+ * @param x
  * @returns boolean
  */
 
-
-// 利用反转后，值相等原理，不涉及算法
 export default function isPalindrome(x: number): boolean {
-    let arr = (x + '').split('');
-    let compareValue = parseInt(arr.reverse().join(''), 10); // 负数反转后，直接被转为正数，不带负号，这里不用特殊处理这。
-    return x === compareValue
+  const cacheNum = x; // 缓存原始值用于最终对比
+
+  // 负数 或者 (以0结尾 && 非零)
+  if (x < 0 || (x % 10 === 0 && x !== 0)) {
+    return false;
+  }
+
+  let reverse: number = 0; // 反转后的值
+  while (x > 0) {
+    reverse = reverse * 10 + x % 10; // 往反转的数字后追加值
+    x = Math.floor(x / 10); // 移除最后一位
+  }
+
+  return reverse === cacheNum
 };
