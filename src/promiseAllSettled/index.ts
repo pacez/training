@@ -14,7 +14,7 @@ export interface IPromiseResult {
   reason?: any;
 }
 export default function PromiseAllSettled(promises: Array<Promise<any>>): Promise<Array<IPromiseResult>> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let doneCount = 0;
     const count = promises.length; // promise数量
 
