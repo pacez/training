@@ -4,7 +4,7 @@
   "description": "一些前端基础算法 与 语法糖实现 练习",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --detectOpenHandles"
   },
   "repository": {
     "type": "git",
