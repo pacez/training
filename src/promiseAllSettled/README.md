@@ -18,7 +18,7 @@ const p2 = new Promise((resolve, reject) => {
     }, 1000)
 });
 
-allSettled([p1,p2]).then(result => {
+promiseAllSettled([p1,p2]).then(result => {
   console.log(result);
 })
 
