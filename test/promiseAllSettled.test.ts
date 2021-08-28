@@ -1,13 +1,13 @@
-import allSettled from '../src/allSettled';
+import promiseAllSettled from '../src/promiseAllSettled';
 
 interface IResult {
   value: any,
   compare: any,
 }
 
-async function getValueAndCompare(promises: Array<Promise<unknown>>): Promise<IResult> {
-  return new Promise( async (resolve,reject) => {
-    const value = await allSettled(promises);
+function getValueAndCompare(promises: Array<Promise<any>>): Promise<IResult> {
+  return new Promise( async (resolve) => {
+    const value = await promiseAllSettled(promises);
     const compare = await Promise.allSettled(promises);
     resolve({
       value,

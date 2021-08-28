@@ -1,4 +1,4 @@
-# allSetled
+# PromiseAllSettled
 
 对于ES6 Promise.allSetled 的简单实现。
 

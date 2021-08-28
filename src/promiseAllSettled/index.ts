@@ -13,7 +13,7 @@ export interface IPromiseResult {
   value?: any;
   reason?: any;
 }
-export default function allSettled(promises: Array<Promise<unknown>>): Promise<Array<IPromiseResult>> {
+export default function PromiseAllSettled(promises: Array<Promise<any>>): Promise<Array<IPromiseResult>> {
   return new Promise((resolve, reject) => {
     let doneCount = 0;
     const count = promises.length; // promise数量
@@ -35,7 +35,7 @@ export default function allSettled(promises: Array<Promise<unknown>>): Promise<A
       }
     }
 
-    for (let i = 0; i < promises.length; i++) {
+    for (let i = 0; i < count; i++) {
       const promise = promises[i];
       promise.then(
         (value) => {
