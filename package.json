@@ -4,7 +4,7 @@
   "description": "一些前端基础算法 与 语法糖实现 练习",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --detectOpenHandles"
+    "test": "check-node-version --node '>= 12' && jest --coverage --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/pacez/training#readme",
   "devDependencies": {
     "@types/jest": "^27.0.1",
+    "check-node-version": "^4.1.0",
     "jest": "^27.0.6",
     "jest-html-reporter": "^3.4.1",
     "ts-jest": "^27.0.5",
