@@ -6,16 +6,14 @@ function compareVersion(version1: string, version2: string): number {
 
   // 取任意最长的版本号进行循环对比
   for (let i = 0; i < maxLength; i++) {
-    let v2 = parseInt(verArr2[i], 10); // 处理V2前导0
 
-    // 之前相等，当前v1还有值(也可能是0)，但是v2 已经没值了， 帮v2补充0。
-    if (typeof v2 === 'undefined') {
-      v2 = 0;
-    }
+    // 若v1还有值(也可能是0)，但是v2 已经没值了， 帮v2补充0。
+    const v2 = parseInt((verArr2[i] || '0'), 10); // 处理V2前导0
+    // 若v2还有值(也可能是0)，但是v1 已经没值了， 帮v1补充0。
+    const v1 = parseInt((verArr1[i] || '0'), 10);  // 处理V1前导0
 
-    const v1 = parseInt(verArr1[i], 10);  // 处理V1前导0
     if (v1 > v2) return 1
-    if (v2 < v1) return -1
+    if (v1 < v2) return -1
 
     // 比到最后，都相等返回0
     if (i === maxLength - 1) {
