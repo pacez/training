@@ -1,4 +1,13 @@
-function compareVersion(version1: string, version2: string): number {
+/**
+ * author: pace_zhong@foxmail.com
+ * 版本号对比
+ *
+ * @export
+ * @param {string} version1
+ * @param {string} version2
+ * @return {*}  {number}
+ */
+export default function compareVersion(version1: string, version2: string) {
   const verArr1 = version1.split('.');
   const verArr2 = version2.split('.');
 
