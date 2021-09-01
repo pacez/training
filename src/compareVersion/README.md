@@ -25,6 +25,4 @@
 解释：version1 中下标为 0 的修订号是 "0"，version2 中下标为 0 的修订号是 "1" 。0 < 1，所以 version1 < version2
 ```
 
-
-[^]: 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/compare-version-numbers著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-来源：力扣（LeetCode）
+[^]: 来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/compare-version-numbers著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。来源：力扣（LeetCode）
