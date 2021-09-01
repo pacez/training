@@ -14,6 +14,7 @@ export default function checkPerfectNumber(num: number): boolean {
     const isEven = num % 2 === 0; // 是否偶数
     let i = 2; 
 
+    // 枚举所有因数，累计和
     while(i * i <= num ) {
         if(num % i === 0){
             result += i + num / i  // 份数 + 每份数量 往结果上递加
