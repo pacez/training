@@ -1,25 +1,27 @@
 // 安全转义转义
 function safeConvert(str:any):string  {
     if(typeof str !== 'string') return str;
-    return str.replace(/[<>"&]/g,(match):string => {
+    return str.replace(/[<>]/g,(match):string => {
         switch(match){
             case '<':
                 return "&lt;";
-            case '>':
+            default:
                 return "&gt;";
-            case '&':
-                return "&amp;";
-            default :
-                return "&quot;";
         }
     });
 }
 
-// 对象模板解析
-function parseData(tpl:string,data:object) {
-    let safeTpl = safeConvert(tpl);  // 处理模板上的脚本
+/**
+ * authour: pace_zhong@foxmail.com
+ * 模板引擎简单实现
+ *
+ * @param {string} tpl
+ * @param {object} data
+ * @return {*}  {string}
+ */
+ export default function parseData(tpl:string,data:object) {
 
-    safeTpl = safeTpl.replace(/\{(\w+(.\w)*)\}/g,(match,key) => {
+    tpl = tpl.replace(/\{(\w+(.\w)*)\}/g,(match,key) => {
         let result = '';
         try{
             // result = safeConvert(eval(`data.${key}`))
@@ -32,19 +34,5 @@ function parseData(tpl:string,data:object) {
         return result
     });
 
-    return safeTpl
+    return tpl
 }
-
-/**
- * authour: pace_zhong@foxmail.com
- * 模板引擎简单实现
- *
- * @param {string} tpl
- * @param {object} data
- * @return {*}  {string}
- */
-export default function templateEngine(tpl:string,data:object):string {
-    return parseData(tpl,data)
-}
-
-

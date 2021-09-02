@@ -4,6 +4,6 @@
 
 ### 示例
 ```javascript
-console.log(templateEngine('<div>{a},{b.c} " & </div>',{a:1,b:{c:2}}));
-//output: '&lt;div&gt;1,2 &quot; &amp; &lt;/div&gt;'
+console.log(templateEngine('<div style="display: block; width: 120px; background: red">{a},{b.c}</div>',{a:1,b:{c:'<script>alert(1)</script>'}}));
+//output: '<div style="display: block; width: 120px; background: red">1,&lt;script&gt;alert(1)&lt;/script&gt;</div>'
 ```
