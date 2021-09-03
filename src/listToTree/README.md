@@ -16,7 +16,6 @@ const userList = [
 const result = listToTree(userList,'province/city/district');
 console.log(result)
 //输出如下：
-/*
 {
     "id": "root",
     "name": "root",
@@ -119,5 +118,4 @@ console.log(result)
         }
     ]
 }
-*/
 ```
