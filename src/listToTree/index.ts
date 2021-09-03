@@ -1,6 +1,6 @@
 // 清理旧节点
 function clean(list:any[]) {
-    return list.filter ? list.filter(item => item.level): list
+    return list.filter(item => item.level)
 }
 
 // 排除终端节点，路径属性
@@ -23,14 +23,14 @@ function grouping(list:any[],pathArr:any[],result:{[key:string]:any},originPathA
     // 取完删除在path中的key
     pathArr.splice(0,1);
 
-    const pathArrLength = pathArr.length;
-
     // 获取当前层级chidren
     let { children } = result;    
 
     
     // 根据level进行分组
     for(const listItem of list) {
+
+        // 根据level寻找目标分组
         const group = children.find((item:{[key:string]:any}) => item.name === listItem[level]);
         
         if(group) {
@@ -42,13 +42,10 @@ function grouping(list:any[],pathArr:any[],result:{[key:string]:any},originPathA
         listItem[level] && children.push({level,name:listItem[level],children:[listItem]});
     }
 
-    // 剃除旧数据
-    children = clean(children);
-
     // 如果路径没有消费完，则继续递归分组
     if(pathArr.length > 0 ) {
         children.forEach((item:{[key:string]:any}) => {
-           grouping(item.children,pathArr.concat([]),item,originPathArr);
+            item.children && grouping(item.children,pathArr.concat([]),item,originPathArr);
         })
     }
 
@@ -57,6 +54,7 @@ function grouping(list:any[],pathArr:any[],result:{[key:string]:any},originPathA
         result.children = excludePathForEndNode(result.children,originPathArr);
     }
 
+    // 递除旧数据
     result.children = clean(result.children);
     
     return result;
@@ -71,9 +69,9 @@ function grouping(list:any[],pathArr:any[],result:{[key:string]:any},originPathA
  */
 export default function list2tree(list:any[],path:string) {
     if(path === '') {
+        // 空路径直接返回list
         return list
     }
-
     const pathArr = path.split('/');
     const level = pathArr[0];
     const result = grouping(list,pathArr,{id:'root',name:'root',children:[]},pathArr.concat([]));

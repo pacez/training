@@ -116,3 +116,9 @@ const case_1 = listToTree(userList,'province/city/district');
 test('用户列表测试', () => {
     expect(case_1).toStrictEqual(data);
 })
+
+
+const case_2 = listToTree(userList,'');
+test('测试空路径', () => {
+    expect(case_2).toStrictEqual(userList);
+})
